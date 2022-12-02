@@ -1,0 +1,25 @@
+-- Merging decision tree log ---
+manifest
+ADDED from F:\codes\android\a2022\androisusbcamera1\libuvccommon\src\main\AndroidManifest.xml:1:1-3:12
+INJECTED from F:\codes\android\a2022\androisusbcamera1\libuvccommon\src\main\AndroidManifest.xml:1:1-3:12
+INJECTED from F:\codes\android\a2022\androisusbcamera1\libuvccommon\src\main\AndroidManifest.xml:1:1-3:12
+	package
+		ADDED from F:\codes\android\a2022\androisusbcamera1\libuvccommon\src\main\AndroidManifest.xml:2:2-30
+		INJECTED from F:\codes\android\a2022\androisusbcamera1\libuvccommon\src\main\AndroidManifest.xml
+		INJECTED from F:\codes\android\a2022\androisusbcamera1\libuvccommon\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from F:\codes\android\a2022\androisusbcamera1\libuvccommon\src\main\AndroidManifest.xml:1:1-3:12
+uses-sdk
+INJECTED from F:\codes\android\a2022\androisusbcamera1\libuvccommon\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from F:\codes\android\a2022\androisusbcamera1\libuvccommon\src\main\AndroidManifest.xml
+INJECTED from F:\codes\android\a2022\androisusbcamera1\libuvccommon\src\main\AndroidManifest.xml
+INJECTED from F:\codes\android\a2022\androisusbcamera1\libuvccommon\src\main\AndroidManifest.xml
+INJECTED from F:\codes\android\a2022\androisusbcamera1\libuvccommon\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from F:\codes\android\a2022\androisusbcamera1\libuvccommon\src\main\AndroidManifest.xml
+		ADDED from F:\codes\android\a2022\androisusbcamera1\libuvccommon\src\main\AndroidManifest.xml
+		INJECTED from F:\codes\android\a2022\androisusbcamera1\libuvccommon\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from F:\codes\android\a2022\androisusbcamera1\libuvccommon\src\main\AndroidManifest.xml
+		ADDED from F:\codes\android\a2022\androisusbcamera1\libuvccommon\src\main\AndroidManifest.xml
+		INJECTED from F:\codes\android\a2022\androisusbcamera1\libuvccommon\src\main\AndroidManifest.xml

@@ -1,0 +1,738 @@
+com/jiangdg/glutils/ITexture.java
+ com.jiangdg.glutils.ITexture
+com/jiangdg/utils/SignatureHelper.java
+ com.jiangdg.utils.SignatureHelper
+com/jiangdg/glutils/TextureOffscreen.java
+ com.jiangdg.glutils.TextureOffscreen
+com/jiangdg/mediaeffect/MediaEffectFillLight.java
+ com.jiangdg.mediaeffect.MediaEffectFillLight
+com/jiangdg/glutils/RendererOnFrameAvailableListener.java
+ com.jiangdg.glutils.RendererOnFrameAvailableListener
+com/jiangdg/glutils/EGLBase.java
+ com.jiangdg.glutils.EGLBase
+ com.jiangdg.glutils.EGLBase$IConfig
+ com.jiangdg.glutils.EGLBase$IContext
+ com.jiangdg.glutils.EGLBase$IEglSurface
+com/jiangdg/glutils/ShaderConst.java
+ com.jiangdg.glutils.ShaderConst
+com/jiangdg/math/RectangleBounds.java
+ com.jiangdg.math.RectangleBounds
+com/jiangdg/mediaeffect/MediaEffectFlipVertical.java
+ com.jiangdg.mediaeffect.MediaEffectFlipVertical
+com/jiangdg/utils/CrashExceptionHandler.java
+ com.jiangdg.utils.CrashExceptionHandler
+com/jiangdg/widget/ItemPickerPreference.java
+ com.jiangdg.widget.ItemPickerPreference
+ com.jiangdg.widget.ItemPickerPreference$1
+com/jiangdg/media/MediaVideoDecoder.java
+ com.jiangdg.media.MediaVideoDecoder
+com/jiangdg/mediaeffect/MediaEffectGLESBase.java
+ com.jiangdg.mediaeffect.MediaEffectGLESBase
+com/jiangdg/net/WiFiP2pHelper.java
+ com.jiangdg.net.WiFiP2pHelper
+ com.jiangdg.net.WiFiP2pHelper$1
+ com.jiangdg.net.WiFiP2pHelper$2
+ com.jiangdg.net.WiFiP2pHelper$3
+ com.jiangdg.net.WiFiP2pHelper$4
+ com.jiangdg.net.WiFiP2pHelper$5
+ com.jiangdg.net.WiFiP2pHelper$6
+ com.jiangdg.net.WiFiP2pHelper$WiFiDirectBroadcastReceiver
+com/jiangdg/glutils/es1/GLHelper.java
+ com.jiangdg.glutils.es1.GLHelper
+com/jiangdg/mediaeffect/MediaEffectDuoTone.java
+ com.jiangdg.mediaeffect.MediaEffectDuoTone
+com/jiangdg/mediaeffect/MediaEffectStraighten.java
+ com.jiangdg.mediaeffect.MediaEffectStraighten
+com/jiangdg/utils/BufferHelper.java
+ com.jiangdg.utils.BufferHelper
+com/jiangdg/media/MediaData.java
+ com.jiangdg.media.MediaData
+com/jiangdg/widget/Dividable.java
+ com.jiangdg.widget.Dividable
+com/jiangdg/media/AbstractFakeEncoder.java
+ com.jiangdg.media.AbstractFakeEncoder
+ com.jiangdg.media.AbstractFakeEncoder$1
+com/jiangdg/mediaeffect/MediaEffectAutoFix.java
+ com.jiangdg.mediaeffect.MediaEffectAutoFix
+com/jiangdg/widget/RelativeRadioGroup.java
+ com.jiangdg.widget.RelativeRadioGroup
+ com.jiangdg.widget.RelativeRadioGroup$1
+ com.jiangdg.widget.RelativeRadioGroup$CheckedStateTracker
+ com.jiangdg.widget.RelativeRadioGroup$LayoutParams
+ com.jiangdg.widget.RelativeRadioGroup$OnCheckedChangeListener
+ com.jiangdg.widget.RelativeRadioGroup$PassThroughHierarchyChangeListener
+com/jiangdg/utils/DeviceInfo.java
+ com.jiangdg.utils.DeviceInfo
+com/jiangdg/widget/ValueSelectorAdapter.java
+ com.jiangdg.widget.ValueSelectorAdapter
+ com.jiangdg.widget.ValueSelectorAdapter$1
+ com.jiangdg.widget.ValueSelectorAdapter$ValueEntry
+ com.jiangdg.widget.ValueSelectorAdapter$ValueSelectorAdapterListener
+ com.jiangdg.widget.ValueSelectorAdapter$ViewHolder
+com/jiangdg/media/Recorder.java
+ com.jiangdg.media.Recorder
+ com.jiangdg.media.Recorder$1
+ com.jiangdg.media.Recorder$EosHandler
+ com.jiangdg.media.Recorder$EosHandler$EosThread
+com/jiangdg/widget/MultilineLabelPreferenceV7.java
+ com.jiangdg.widget.MultilineLabelPreferenceV7
+com/jiangdg/media/MediaMovieRecorder.java
+ com.jiangdg.media.MediaMovieRecorder
+ com.jiangdg.media.MediaMovieRecorder$1
+ com.jiangdg.media.MediaMovieRecorder$IRecorderCallback
+com/jiangdg/media/ISurfaceEncoder.java
+ com.jiangdg.media.ISurfaceEncoder
+com/jiangdg/mediaeffect/MediaImageSource.java
+ com.jiangdg.mediaeffect.MediaImageSource
+com/jiangdg/bluetooth/BluetoothDeviceInfoAdapter.java
+ com.jiangdg.bluetooth.BluetoothDeviceInfoAdapter
+ com.jiangdg.bluetooth.BluetoothDeviceInfoAdapter$1
+ com.jiangdg.bluetooth.BluetoothDeviceInfoAdapter$ViewHolder
+com/jiangdg/bluetooth/BluetoothDeviceInfoRecyclerAdapter.java
+ com.jiangdg.bluetooth.BluetoothDeviceInfoRecyclerAdapter
+ com.jiangdg.bluetooth.BluetoothDeviceInfoRecyclerAdapter$1
+ com.jiangdg.bluetooth.BluetoothDeviceInfoRecyclerAdapter$OnItemClickListener
+ com.jiangdg.bluetooth.BluetoothDeviceInfoRecyclerAdapter$ViewHolder
+com/jiangdg/glutils/IDrawer2D.java
+ com.jiangdg.glutils.IDrawer2D
+com/jiangdg/net/NetworkHelper.java
+ com.jiangdg.net.NetworkHelper
+com/jiangdg/mediaeffect/MediaEffectCrossProcess.java
+ com.jiangdg.mediaeffect.MediaEffectCrossProcess
+com/jiangdg/media/IRecorder.java
+ com.jiangdg.media.IRecorder
+ com.jiangdg.media.IRecorder$RecorderCallback
+ com.jiangdg.media.IRecorder$RecorderState
+com/jiangdg/utils/GyroHelper.java
+ com.jiangdg.utils.GyroHelper
+ com.jiangdg.utils.GyroHelper$1
+com/jiangdg/utils/PowerHelper.java
+ com.jiangdg.utils.PowerHelper
+com/jiangdg/glutils/GLMasterContext.java
+ com.jiangdg.glutils.GLMasterContext
+ com.jiangdg.glutils.GLMasterContext$MasterTask
+com/jiangdg/utils/PermissionCheck.java
+ com.jiangdg.utils.PermissionCheck
+com/jiangdg/utils/ResourceHelper.java
+ com.jiangdg.utils.ResourceHelper
+com/jiangdg/widget/SeekBarPreferenceV7.java
+ com.jiangdg.widget.SeekBarPreferenceV7
+ com.jiangdg.widget.SeekBarPreferenceV7$1
+com/jiangdg/media/TimeoutException.java
+ com.jiangdg.media.TimeoutException
+com/jiangdg/mediaeffect/MediaEffectBrightness.java
+ com.jiangdg.mediaeffect.MediaEffectBrightness
+com/jiangdg/glutils/EffectRendererHolder.java
+ com.jiangdg.glutils.EffectRendererHolder
+ com.jiangdg.glutils.EffectRendererHolder$MyRendererTask
+com/jiangdg/utils/MemInfo.java
+ com.jiangdg.utils.MemInfo
+com/jiangdg/glutils/EGLBase10.java
+ com.jiangdg.glutils.EGLBase10
+ com.jiangdg.glutils.EGLBase10$1
+ com.jiangdg.glutils.EGLBase10$Config
+ com.jiangdg.glutils.EGLBase10$Context
+ com.jiangdg.glutils.EGLBase10$EglSurface
+ com.jiangdg.glutils.EGLBase10$MySurfaceHolder
+com/jiangdg/mediastore/MediaStoreHelper.java
+ com.jiangdg.mediastore.MediaStoreHelper
+ com.jiangdg.mediastore.MediaStoreHelper$ImageLoader
+ com.jiangdg.mediastore.MediaStoreHelper$LoaderDrawable
+ com.jiangdg.mediastore.MediaStoreHelper$MediaInfo
+com/jiangdg/net/WiFiP2pListener.java
+ com.jiangdg.net.WiFiP2pListener
+com/jiangdg/utils/DeviceAdminReceiverLock.java
+ com.jiangdg.utils.DeviceAdminReceiverLock
+com/jiangdg/dialog/MessageDialogFragmentV4.java
+ com.jiangdg.dialog.MessageDialogFragmentV4
+ com.jiangdg.dialog.MessageDialogFragmentV4$1
+ com.jiangdg.dialog.MessageDialogFragmentV4$MessageDialogListener
+com/jiangdg/widget/CustomRecycleViewAdapter.java
+ com.jiangdg.widget.CustomRecycleViewAdapter
+ com.jiangdg.widget.CustomRecycleViewAdapter$1
+ com.jiangdg.widget.CustomRecycleViewAdapter$1$1
+ com.jiangdg.widget.CustomRecycleViewAdapter$2
+ com.jiangdg.widget.CustomRecycleViewAdapter$ViewHolder
+com/jiangdg/media/AbstractMediaAVRecorder.java
+ com.jiangdg.media.AbstractMediaAVRecorder
+com/jiangdg/glutils/RenderHandler.java
+ com.jiangdg.glutils.RenderHandler
+ com.jiangdg.glutils.RenderHandler$1
+ com.jiangdg.glutils.RenderHandler$ContextParams
+ com.jiangdg.glutils.RenderHandler$RenderThread
+com/jiangdg/io/IWritable.java
+ com.jiangdg.io.IWritable
+com/jiangdg/mediaeffect/MediaEffectTint.java
+ com.jiangdg.mediaeffect.MediaEffectTint
+com/jiangdg/utils/XmlHelper.java
+ com.jiangdg.utils.XmlHelper
+com/jiangdg/mediaeffect/MediaEffectRotate.java
+ com.jiangdg.mediaeffect.MediaEffectRotate
+com/jiangdg/media/MediaAudioDecoder.java
+ com.jiangdg.media.MediaAudioDecoder
+com/jiangdg/mediastore/MediaStoreImageAdapter.java
+ com.jiangdg.mediastore.MediaStoreImageAdapter
+ com.jiangdg.mediastore.MediaStoreImageAdapter$1
+ com.jiangdg.mediastore.MediaStoreImageAdapter$ChangeObserver
+ com.jiangdg.mediastore.MediaStoreImageAdapter$ImageLoaderDrawable
+ com.jiangdg.mediastore.MediaStoreImageAdapter$MyAsyncQueryHandler
+ com.jiangdg.mediastore.MediaStoreImageAdapter$MyDataSetObserver
+ com.jiangdg.mediastore.MediaStoreImageAdapter$MyImageLoader
+ com.jiangdg.mediastore.MediaStoreImageAdapter$ViewHolder
+com/jiangdg/widget/ColorPickerDialogPreference.java
+ com.jiangdg.widget.ColorPickerDialogPreference
+ com.jiangdg.widget.ColorPickerDialogPreference$1
+com/jiangdg/io/ByteBufferOutputStream.java
+ com.jiangdg.io.ByteBufferOutputStream
+com/jiangdg/glutils/RendererSurfaceRec.java
+ com.jiangdg.glutils.RendererSurfaceRec
+ com.jiangdg.glutils.RendererSurfaceRec$1
+ com.jiangdg.glutils.RendererSurfaceRec$RendererSurfaceRecHasWait
+com/jiangdg/mediaeffect/ISource.java
+ com.jiangdg.mediaeffect.ISource
+com/jiangdg/mediastore/MediaStoreAdapter.java
+ com.jiangdg.mediastore.MediaStoreAdapter
+ com.jiangdg.mediastore.MediaStoreAdapter$1
+ com.jiangdg.mediastore.MediaStoreAdapter$MyAsyncQueryHandler
+ com.jiangdg.mediastore.MediaStoreAdapter$ThumbnailLoader
+ com.jiangdg.mediastore.MediaStoreAdapter$ThumbnailLoaderDrawable
+ com.jiangdg.mediastore.MediaStoreAdapter$ViewHolder
+com/jiangdg/widget/ColorPickerView.java
+ com.jiangdg.widget.ColorPickerView
+ com.jiangdg.widget.ColorPickerView$ColorPickerListener
+com/jiangdg/utils/ComponentUtils.java
+ com.jiangdg.utils.ComponentUtils
+com/jiangdg/widget/SeekBarPreference.java
+ com.jiangdg.widget.SeekBarPreference
+ com.jiangdg.widget.SeekBarPreference$1
+com/jiangdg/media/IMediaCodecCallback.java
+ com.jiangdg.media.IMediaCodecCallback
+com/jiangdg/widget/ProgressView.java
+ com.jiangdg.widget.ProgressView
+ com.jiangdg.widget.ProgressView$1
+com/jiangdg/mediaeffect/MediaEffectRedEye.java
+ com.jiangdg.mediaeffect.MediaEffectRedEye
+com/jiangdg/mediaeffect/MediaEffectBlackWhite.java
+ com.jiangdg.mediaeffect.MediaEffectBlackWhite
+com/jiangdg/utils/ReentrantReadWriteList.java
+ com.jiangdg.utils.ReentrantReadWriteList
+com/jiangdg/math/SphereBounds.java
+ com.jiangdg.math.SphereBounds
+com/jiangdg/media/AudioData.java
+ com.jiangdg.media.AudioData
+com/jiangdg/widget/CustomRecycleViewListener.java
+ com.jiangdg.widget.CustomRecycleViewListener
+com/jiangdg/mediaeffect/MediaEffectCrop.java
+ com.jiangdg.mediaeffect.MediaEffectCrop
+com/jiangdg/mediaeffect/MediaEffectEmboss.java
+ com.jiangdg.mediaeffect.MediaEffectEmboss
+com/jiangdg/notification/NotificationBuilder.java
+ com.jiangdg.notification.NotificationBuilder
+ com.jiangdg.notification.NotificationBuilder$1
+ com.jiangdg.notification.NotificationBuilder$BadgeIconType
+ com.jiangdg.notification.NotificationBuilder$DefaultIntentFactory
+ com.jiangdg.notification.NotificationBuilder$IntentFactory
+ com.jiangdg.notification.NotificationBuilder$NotificationBuilderFactory
+com/jiangdg/glutils/DumbRenderer.java
+ com.jiangdg.glutils.DumbRenderer
+ com.jiangdg.glutils.DumbRenderer$RendererDelegater
+ com.jiangdg.glutils.DumbRenderer$RendererTask
+com/jiangdg/utils/SysFs.java
+ com.jiangdg.utils.SysFs
+ com.jiangdg.utils.SysFs$MyByteArrayOutputStream
+com/jiangdg/glutils/AbstractRendererHolder.java
+ com.jiangdg.glutils.AbstractRendererHolder
+ com.jiangdg.glutils.AbstractRendererHolder$1
+ com.jiangdg.glutils.AbstractRendererHolder$BaseRendererTask
+ com.jiangdg.glutils.AbstractRendererHolder$BaseRendererTask$1
+ com.jiangdg.glutils.AbstractRendererHolder$RendererTask
+com/jiangdg/widget/ITextureView.java
+ com.jiangdg.widget.ITextureView
+com/jiangdg/widget/ItemPickerButton.java
+ com.jiangdg.widget.ItemPickerButton
+com/jiangdg/media/MediaCodecHelper.java
+ com.jiangdg.media.MediaCodecHelper
+com/jiangdg/mediaeffect/MediaEffectExposure.java
+ com.jiangdg.mediaeffect.MediaEffectExposure
+com/jiangdg/mediaeffect/MediaEffectBitmapOverlay.java
+ com.jiangdg.mediaeffect.MediaEffectBitmapOverlay
+com/jiangdg/glutils/RendererHolder.java
+ com.jiangdg.glutils.RendererHolder
+ com.jiangdg.glutils.RendererHolder$MyRendererTask
+com/jiangdg/widget/ItemPickerPreferenceV7.java
+ com.jiangdg.widget.ItemPickerPreferenceV7
+ com.jiangdg.widget.ItemPickerPreferenceV7$1
+com/jiangdg/media/AbstractAudioEncoder.java
+ com.jiangdg.media.AbstractAudioEncoder
+com/jiangdg/media/IMediaCodec.java
+ com.jiangdg.media.IMediaCodec
+com/jiangdg/utils/SDUtils.java
+ com.jiangdg.utils.SDUtils
+ com.jiangdg.utils.SDUtils$FileFilter
+ com.jiangdg.utils.SDUtils$handleOnResultDelegater
+com/jiangdg/db/SQLiteBlobHelper.java
+ com.jiangdg.db.SQLiteBlobHelper
+com/jiangdg/graphics/BitmapHelper.java
+ com.jiangdg.graphics.BitmapHelper
+com/jiangdg/mediaeffect/IEffect.java
+ com.jiangdg.mediaeffect.IEffect
+com/jiangdg/media/MediaDecoder.java
+ com.jiangdg.media.MediaDecoder
+ com.jiangdg.media.MediaDecoder$1
+com/jiangdg/glutils/GLDrawer2D.java
+ com.jiangdg.glutils.GLDrawer2D
+com/jiangdg/bluetooth/BluetoothManager.java
+ com.jiangdg.bluetooth.BluetoothManager
+ com.jiangdg.bluetooth.BluetoothManager$1
+ com.jiangdg.bluetooth.BluetoothManager$BluetoothManagerCallback
+ com.jiangdg.bluetooth.BluetoothManager$BluetoothSocketThread
+ com.jiangdg.bluetooth.BluetoothManager$ConnectingThread
+ com.jiangdg.bluetooth.BluetoothManager$ListeningThread
+ com.jiangdg.bluetooth.BluetoothManager$ReceiverThread
+com/jiangdg/media/MediaEncoder.java
+ com.jiangdg.media.MediaEncoder
+ com.jiangdg.media.MediaEncoder$1
+com/jiangdg/utils/StorageInfo.java
+ com.jiangdg.utils.StorageInfo
+com/jiangdg/notification/ChannelBuilder.java
+ com.jiangdg.notification.ChannelBuilder
+ com.jiangdg.notification.ChannelBuilder$Importance
+ com.jiangdg.notification.ChannelBuilder$NotificationVisibility
+com/jiangdg/widget/Touchable.java
+ com.jiangdg.widget.Touchable
+com/jiangdg/media/MediaFileUtils.java
+ com.jiangdg.media.MediaFileUtils
+com/jiangdg/utils/ViewAnimationHelper.java
+ com.jiangdg.utils.ViewAnimationHelper
+ com.jiangdg.utils.ViewAnimationHelper$1
+ com.jiangdg.utils.ViewAnimationHelper$2
+ com.jiangdg.utils.ViewAnimationHelper$3
+ com.jiangdg.utils.ViewAnimationHelper$4
+ com.jiangdg.utils.ViewAnimationHelper$5
+ com.jiangdg.utils.ViewAnimationHelper$6
+ com.jiangdg.utils.ViewAnimationHelper$ViewAnimationListener
+com/jiangdg/mediaeffect/MediaEffectDrawer.java
+ com.jiangdg.mediaeffect.MediaEffectDrawer
+ com.jiangdg.mediaeffect.MediaEffectDrawer$MediaEffectSingleDrawer
+com/jiangdg/io/ChannelHelper.java
+ com.jiangdg.io.ChannelHelper
+com/jiangdg/mediaeffect/MediaEffectKernel.java
+ com.jiangdg.mediaeffect.MediaEffectKernel
+com/jiangdg/service/BaseService.java
+ com.jiangdg.service.BaseService
+ com.jiangdg.service.BaseService$1
+ com.jiangdg.service.BaseService$2
+ com.jiangdg.service.BaseService$NotificationFactory
+com/jiangdg/bluetooth/BluetoothDeviceInfo.java
+ com.jiangdg.bluetooth.BluetoothDeviceInfo
+ com.jiangdg.bluetooth.BluetoothDeviceInfo$1
+com/jiangdg/utils/ThreadPool.java
+ com.jiangdg.utils.ThreadPool
+com/jiangdg/widget/FrameSelectorView.java
+ com.jiangdg.widget.FrameSelectorView
+ com.jiangdg.widget.FrameSelectorView$1
+ com.jiangdg.widget.FrameSelectorView$2
+ com.jiangdg.widget.FrameSelectorView$3
+ com.jiangdg.widget.FrameSelectorView$4
+ com.jiangdg.widget.FrameSelectorView$5
+ com.jiangdg.widget.FrameSelectorView$FrameSelectorViewCallback
+com/jiangdg/utils/CollectionMap.java
+ com.jiangdg.utils.CollectionMap
+com/jiangdg/utils/Stacktrace.java
+ com.jiangdg.utils.Stacktrace
+com/jiangdg/widget/CheckableLinearLayout.java
+ com.jiangdg.widget.CheckableLinearLayout
+com/jiangdg/media/VideoEncoder.java
+ com.jiangdg.media.VideoEncoder
+com/jiangdg/utils/ObjectHelper.java
+ com.jiangdg.utils.ObjectHelper
+com/jiangdg/media/IAudioEncoder.java
+ com.jiangdg.media.IAudioEncoder
+com/jiangdg/mediaeffect/MediaEffectSepia.java
+ com.jiangdg.mediaeffect.MediaEffectSepia
+com/jiangdg/widget/ZoomAspectScaledTextureView.java
+ com.jiangdg.widget.ZoomAspectScaledTextureView
+ com.jiangdg.widget.ZoomAspectScaledTextureView$1
+ com.jiangdg.widget.ZoomAspectScaledTextureView$LineSegment
+ com.jiangdg.widget.ZoomAspectScaledTextureView$StartCheckRotate
+ com.jiangdg.widget.ZoomAspectScaledTextureView$Vector
+ com.jiangdg.widget.ZoomAspectScaledTextureView$WaitImageReset
+com/jiangdg/glutils/RenderHolderCallback.java
+ com.jiangdg.glutils.RenderHolderCallback
+com/jiangdg/utils/TalkBackHelper.java
+ com.jiangdg.utils.TalkBackHelper
+com/jiangdg/mediaeffect/MediaEffectGLESTwoPassBase.java
+ com.jiangdg.mediaeffect.MediaEffectGLESTwoPassBase
+com/jiangdg/db/CursorHelper.java
+ com.jiangdg.db.CursorHelper
+com/jiangdg/utils/IEnum.java
+ com.jiangdg.utils.IEnum
+ com.jiangdg.utils.IEnum$EnumInterface
+ com.jiangdg.utils.IEnum$EnumInterfaceEx
+com/jiangdg/glutils/EglTask.java
+ com.jiangdg.glutils.EglTask
+com/jiangdg/media/AudioSampler.java
+ com.jiangdg.media.AudioSampler
+ com.jiangdg.media.AudioSampler$AudioRecordRec
+ com.jiangdg.media.AudioSampler$AudioThread
+com/jiangdg/utils/OpenGLInfo.java
+ com.jiangdg.utils.OpenGLInfo
+com/jiangdg/utils/HandlerThreadHandler.java
+ com.jiangdg.utils.HandlerThreadHandler
+com/jiangdg/io/ByteChannelWrapper.java
+ com.jiangdg.io.ByteChannelWrapper
+com/jiangdg/mediaeffect/MediaEffectNull.java
+ com.jiangdg.mediaeffect.MediaEffectNull
+com/jiangdg/widget/ItemPicker.java
+ com.jiangdg.widget.ItemPicker
+ com.jiangdg.widget.ItemPicker$1
+ com.jiangdg.widget.ItemPicker$2
+ com.jiangdg.widget.ItemPicker$3
+ com.jiangdg.widget.ItemPicker$4
+ com.jiangdg.widget.ItemPicker$Formatter
+ com.jiangdg.widget.ItemPicker$NumberPickerInputFilter
+ com.jiangdg.widget.ItemPicker$NumberRangeKeyListener
+ com.jiangdg.widget.ItemPicker$OnChangedListener
+com/jiangdg/widget/TwoPainViewGroup.java
+ com.jiangdg.widget.TwoPainViewGroup
+ com.jiangdg.widget.TwoPainViewGroup$1
+ com.jiangdg.widget.TwoPainViewGroup$2
+com/jiangdg/graphics/BrushDrawable.java
+ com.jiangdg.graphics.BrushDrawable
+com/jiangdg/net/UdpBeacon.java
+ com.jiangdg.net.UdpBeacon
+ com.jiangdg.net.UdpBeacon$1
+ com.jiangdg.net.UdpBeacon$2
+ com.jiangdg.net.UdpBeacon$Beacon
+ com.jiangdg.net.UdpBeacon$BeaconShotTask
+ com.jiangdg.net.UdpBeacon$ReceiverTask
+ com.jiangdg.net.UdpBeacon$ReceiverTask$1
+ com.jiangdg.net.UdpBeacon$UdpBeaconCallback
+com/jiangdg/graphics/IsoscelesTriangleShape.java
+ com.jiangdg.graphics.IsoscelesTriangleShape
+com/jiangdg/media/MediaAVRecorder.java
+ com.jiangdg.media.MediaAVRecorder
+com/jiangdg/media/AudioSamplerEncoder.java
+ com.jiangdg.media.AudioSamplerEncoder
+ com.jiangdg.media.AudioSamplerEncoder$1
+ com.jiangdg.media.AudioSamplerEncoder$2
+com/jiangdg/glutils/IRendererHolder.java
+ com.jiangdg.glutils.IRendererHolder
+ com.jiangdg.glutils.IRendererHolder$StillCaptureFormat
+com/jiangdg/math/CylinderBounds.java
+ com.jiangdg.math.CylinderBounds
+com/jiangdg/media/IVideoEncoder.java
+ com.jiangdg.media.IVideoEncoder
+com/jiangdg/glutils/IRendererCommon.java
+ com.jiangdg.glutils.IRendererCommon
+ com.jiangdg.glutils.IRendererCommon$MirrorMode
+com/jiangdg/glutils/Texture2dProgram.java
+ com.jiangdg.glutils.Texture2dProgram
+ com.jiangdg.glutils.Texture2dProgram$1
+ com.jiangdg.glutils.Texture2dProgram$ProgramType
+com/jiangdg/utils/FileUtils.java
+ com.jiangdg.utils.FileUtils
+com/jiangdg/math/RingBounds.java
+ com.jiangdg.math.RingBounds
+com/jiangdg/utils/CpuMonitor.java
+ com.jiangdg.utils.CpuMonitor
+ com.jiangdg.utils.CpuMonitor$1
+ com.jiangdg.utils.CpuMonitor$ProcStat
+com/jiangdg/utils/LogUtils.java
+ com.jiangdg.utils.LogUtils
+com/jiangdg/common/BuildConfig.java
+ com.jiangdg.common.BuildConfig
+com/jiangdg/glutils/StaticTextureSource.java
+ com.jiangdg.glutils.StaticTextureSource
+ com.jiangdg.glutils.StaticTextureSource$1
+ com.jiangdg.glutils.StaticTextureSource$RendererTask
+com/jiangdg/mediaeffect/MediaEffectTemperature.java
+ com.jiangdg.mediaeffect.MediaEffectTemperature
+com/jiangdg/net/SocketChannelDataLink.java
+ com.jiangdg.net.SocketChannelDataLink
+ com.jiangdg.net.SocketChannelDataLink$Client
+ com.jiangdg.net.SocketChannelDataLink$ServerTask
+com/jiangdg/widget/ViewHelper.java
+ com.jiangdg.cameracommon.ViewHelper
+com/jiangdg/glutils/GLHelper.java
+ com.jiangdg.glutils.GLHelper
+com/jiangdg/mediaeffect/MediaEffectLomoish.java
+ com.jiangdg.mediaeffect.MediaEffectLomoish
+com/jiangdg/media/MediaAudioEncoder.java
+ com.jiangdg.media.MediaAudioEncoder
+ com.jiangdg.media.MediaAudioEncoder$1
+ com.jiangdg.media.MediaAudioEncoder$AudioThread
+com/jiangdg/widget/TimePickerPreference.java
+ com.jiangdg.widget.TimePickerPreference
+com/jiangdg/media/AudioEncoder.java
+ com.jiangdg.media.AudioEncoder
+ com.jiangdg.media.AudioEncoder$AudioThread
+com/jiangdg/utils/BitsHelper.java
+ com.jiangdg.utils.BitsHelper
+com/jiangdg/mediaeffect/MediaEffectDocumentary.java
+ com.jiangdg.mediaeffect.MediaEffectDocumentary
+com/jiangdg/dialog/ColorPickerDialogV4.java
+ com.jiangdg.dialog.ColorPickerDialogV4
+ com.jiangdg.dialog.ColorPickerDialogV4$1
+ com.jiangdg.dialog.ColorPickerDialogV4$2
+ com.jiangdg.dialog.ColorPickerDialogV4$OnColorChangedListener
+com/jiangdg/glutils/IRenderer.java
+ com.jiangdg.glutils.IRenderer
+com/jiangdg/mediaeffect/MediaEffectTexProjection.java
+ com.jiangdg.mediaeffect.MediaEffectTexProjection
+ com.jiangdg.mediaeffect.MediaEffectTexProjection$MediaEffectTexProjectionDrawer
+com/jiangdg/mediaeffect/MediaEffectVignette.java
+ com.jiangdg.mediaeffect.MediaEffectVignette
+com/jiangdg/math/OverlapTester.java
+ com.jiangdg.math.OverlapTester
+com/jiangdg/mediaeffect/MediaEffectFlip.java
+ com.jiangdg.mediaeffect.MediaEffectFlip
+com/jiangdg/widget/AspectRatioFrameLayout.java
+ com.jiangdg.widget.AspectRatioFrameLayout
+com/jiangdg/media/MediaMoviePlayer.java
+ com.jiangdg.media.MediaMoviePlayer
+ com.jiangdg.media.MediaMoviePlayer$1
+ com.jiangdg.media.MediaMoviePlayer$2
+ com.jiangdg.media.MediaMoviePlayer$3
+com/jiangdg/math/Vector.java
+ com.jiangdg.math.Vector
+com/jiangdg/widget/TimePickerPreferenceV7.java
+ com.jiangdg.widget.TimePickerPreferenceV7
+com/jiangdg/mediaeffect/MediaEffectSharpen.java
+ com.jiangdg.mediaeffect.MediaEffectSharpen
+com/jiangdg/dialog/ColorPickerDialog.java
+ com.jiangdg.dialog.ColorPickerDialog
+ com.jiangdg.dialog.ColorPickerDialog$1
+ com.jiangdg.dialog.ColorPickerDialog$2
+ com.jiangdg.dialog.ColorPickerDialog$OnColorChangedListener
+com/jiangdg/widget/RecycleViewWithEmptyView.java
+ com.jiangdg.widget.RecycleViewWithEmptyView
+ com.jiangdg.widget.RecycleViewWithEmptyView$1
+ com.jiangdg.widget.RecycleViewWithEmptyView$2
+com/jiangdg/io/ReadableInputStreamWrapper.java
+ com.jiangdg.io.ReadableInputStreamWrapper
+com/jiangdg/utils/AssetsHelper.java
+ com.jiangdg.utils.AssetsHelper
+com/jiangdg/mediaeffect/MediaEffectSaturate.java
+ com.jiangdg.mediaeffect.MediaEffectSaturate
+com/jiangdg/media/VideoConfig.java
+ com.jiangdg.media.VideoConfig
+com/jiangdg/glutils/es1/GLDrawer2D.java
+ com.jiangdg.glutils.es1.GLDrawer2D
+com/jiangdg/mediaeffect/MediaEffectCanny.java
+ com.jiangdg.mediaeffect.MediaEffectCanny
+com/jiangdg/graphics/ShaderDrawable.java
+ com.jiangdg.graphics.ShaderDrawable
+com/jiangdg/mediaeffect/MediaSource.java
+ com.jiangdg.mediaeffect.MediaSource
+com/jiangdg/media/VideoMuxer.java
+ com.jiangdg.media.VideoMuxer
+com/jiangdg/graphics/PathShape.java
+ com.jiangdg.graphics.PathShape
+com/jiangdg/widget/DividerItemDecoration.java
+ com.jiangdg.widget.DividerItemDecoration
+com/jiangdg/dialog/MessageDialogFragment.java
+ com.jiangdg.dialog.MessageDialogFragment
+ com.jiangdg.dialog.MessageDialogFragment$1
+ com.jiangdg.dialog.MessageDialogFragment$2
+ com.jiangdg.dialog.MessageDialogFragment$MessageDialogListener
+com/jiangdg/utils/BrightnessHelper.java
+ com.jiangdg.utils.BrightnessHelper
+com/jiangdg/math/CircleBounds.java
+ com.jiangdg.math.CircleBounds
+com/jiangdg/media/IMuxer.java
+ com.jiangdg.media.IMuxer
+com/jiangdg/media/AudioEncoderBuffered.java
+ com.jiangdg.media.AudioEncoderBuffered
+ com.jiangdg.media.AudioEncoderBuffered$AudioThread
+ com.jiangdg.media.AudioEncoderBuffered$DequeueThread
+com/jiangdg/graphics/TriangleShape.java
+ com.jiangdg.graphics.TriangleShape
+com/jiangdg/mediaeffect/MediaEffectAlphaBlend.java
+ com.jiangdg.mediaeffect.MediaEffectAlphaBlend
+ com.jiangdg.mediaeffect.MediaEffectAlphaBlend$MediaEffectAlphaBlendDrawer
+com/jiangdg/mediaeffect/MediaEffectErosion.java
+ com.jiangdg.mediaeffect.MediaEffectErosion
+ com.jiangdg.mediaeffect.MediaEffectErosion$MediaEffectErosionDrawer
+com/jiangdg/widget/ColorPickerDialogPreferenceV7.java
+ com.jiangdg.widget.ColorPickerDialogPreferenceV7
+ com.jiangdg.widget.ColorPickerDialogPreferenceV7$1
+com/jiangdg/media/Encoder.java
+ com.jiangdg.media.Encoder
+com/jiangdg/math/BaseBounds.java
+ com.jiangdg.math.BaseBounds
+com/jiangdg/mediaeffect/MediaEffectSaturateGLES.java
+ com.jiangdg.mediaeffect.MediaEffectSaturateGLES
+com/jiangdg/widget/IAspectRatioView.java
+ com.jiangdg.widget.IAspectRatioView
+com/jiangdg/utils/MessageTask.java
+ com.jiangdg.utils.MessageTask
+ com.jiangdg.utils.MessageTask$1
+ com.jiangdg.utils.MessageTask$Request
+ com.jiangdg.utils.MessageTask$TaskBreak
+com/jiangdg/utils/UriHelper.java
+ com.jiangdg.utils.UriHelper
+com/jiangdg/mediaeffect/MediaEffectExtraction.java
+ com.jiangdg.mediaeffect.MediaEffectExtraction
+com/jiangdg/utils/ReentrantReadWriteWeakRef.java
+ com.jiangdg.utils.ReentrantReadWriteWeakRef
+com/jiangdg/mediaeffect/MediaEffectGrain.java
+ com.jiangdg.mediaeffect.MediaEffectGrain
+com/jiangdg/utils/FpsCounter.java
+ com.jiangdg.utils.FpsCounter
+com/jiangdg/media/MediaMuxerWrapper.java
+ com.jiangdg.media.MediaMuxerWrapper
+com/jiangdg/media/FakeVideoEncoder.java
+ com.jiangdg.media.FakeVideoEncoder
+com/jiangdg/mediaeffect/MediaEffectDilation.java
+ com.jiangdg.mediaeffect.MediaEffectDilation
+ com.jiangdg.mediaeffect.MediaEffectDilation$MediaEffectDilationDrawer
+com/jiangdg/mediaeffect/MediaEffectKernel3x3Drawer.java
+ com.jiangdg.mediaeffect.MediaEffectKernel3x3Drawer
+com/jiangdg/utils/JSONHelper.java
+ com.jiangdg.utils.JSONHelper
+com/jiangdg/utils/Pool.java
+ com.jiangdg.utils.Pool
+com/jiangdg/utils/CRC32.java
+ com.jiangdg.utils.CRC32
+com/jiangdg/utils/PrefHelper.java
+ com.jiangdg.utils.PrefHelper
+com/jiangdg/utils/Time.java
+ com.jiangdg.utils.Time
+ com.jiangdg.utils.Time$1
+ com.jiangdg.utils.Time$TimeJellyBeanMr1
+com/jiangdg/net/NetworkChangedReceiver.java
+ com.jiangdg.net.NetworkChangedReceiver
+ com.jiangdg.net.NetworkChangedReceiver$1
+ com.jiangdg.net.NetworkChangedReceiver$OnNetworkChangedListener
+com/jiangdg/widget/CheckableRelativeLayout.java
+ com.jiangdg.widget.CheckableRelativeLayout
+com/jiangdg/utils/Endian.java
+ com.jiangdg.utils.Endian
+com/jiangdg/mediaeffect/MediaEffectContrast.java
+ com.jiangdg.mediaeffect.MediaEffectContrast
+com/jiangdg/net/AbstractChannelDataLink.java
+ com.jiangdg.net.AbstractChannelDataLink
+ com.jiangdg.net.AbstractChannelDataLink$AbstractClient
+ com.jiangdg.net.AbstractChannelDataLink$Callback
+com/jiangdg/utils/DocumentFileHelper.java
+ com.jiangdg.utils.DocumentFileHelper
+com/jiangdg/media/IAudioSampler.java
+ com.jiangdg.media.IAudioSampler
+ com.jiangdg.media.IAudioSampler$AudioSource
+ com.jiangdg.media.IAudioSampler$CallbackThread
+ com.jiangdg.media.IAudioSampler$SoundSamplerCallback
+com/jiangdg/net/UdpSocket.java
+ com.jiangdg.net.UdpSocket
+com/jiangdg/widget/FrameView.java
+ com.jiangdg.widget.FrameView
+com/jiangdg/mediaeffect/MediaEffect.java
+ com.jiangdg.mediaeffect.MediaEffect
+com/jiangdg/mediaeffect/MediaEffectMaskedAlphaBlend.java
+ com.jiangdg.mediaeffect.MediaEffectMaskedAlphaBlend
+com/jiangdg/mediaeffect/MediaEffectGrayScale.java
+ com.jiangdg.mediaeffect.MediaEffectGrayScale
+com/jiangdg/media/SurfaceEncoder.java
+ com.jiangdg.media.SurfaceEncoder
+com/jiangdg/db/UriMatcher.java
+ com.jiangdg.db.UriMatcher
+com/jiangdg/utils/RefCountedAutoCloseable.java
+ com.jiangdg.utils.RefCountedAutoCloseable
+com/jiangdg/net/ConnectivityHelper.java
+ com.jiangdg.net.ConnectivityHelper
+ com.jiangdg.net.ConnectivityHelper$ConnectivityCallback
+ com.jiangdg.net.ConnectivityHelper$MyNetworkCallback
+ com.jiangdg.net.ConnectivityHelper$MyOnNetworkActiveListener
+ com.jiangdg.net.ConnectivityHelper$NetworkChangedReceiver
+com/jiangdg/graphics/BaseShape.java
+ com.jiangdg.graphics.BaseShape
+com/jiangdg/glutils/GLTexture.java
+ com.jiangdg.glutils.GLTexture
+com/jiangdg/glutils/es1/GLTexture.java
+ com.jiangdg.glutils.es1.GLTexture
+com/jiangdg/utils/ReentrantReadWriteReference.java
+ com.jiangdg.utils.ReentrantReadWriteReference
+com/jiangdg/mediaeffect/MediaEffectPosterize.java
+ com.jiangdg.mediaeffect.MediaEffectPosterize
+com/jiangdg/utils/MediaInfo.java
+ com.jiangdg.utils.MediaInfo
+com/jiangdg/media/IFrameCallback.java
+ com.jiangdg.media.IFrameCallback
+com/jiangdg/media/AbstractEncoder.java
+ com.jiangdg.media.AbstractEncoder
+ com.jiangdg.media.AbstractEncoder$1
+com/jiangdg/mediaeffect/MediaEffectFishEye.java
+ com.jiangdg.mediaeffect.MediaEffectFishEye
+com/jiangdg/mediaeffect/MediaEffectFlipHorizontal.java
+ com.jiangdg.mediaeffect.MediaEffectFlipHorizontal
+com/jiangdg/utils/SAFUtils.java
+ com.jiangdg.utils.SAFUtils
+ com.jiangdg.utils.SAFUtils$FileFilter
+ com.jiangdg.utils.SAFUtils$handleOnResultDelegater
+com/jiangdg/widget/IScaledView.java
+ com.jiangdg.widget.IScaledView
+com/jiangdg/glutils/EGLBase14.java
+ com.jiangdg.glutils.EGLBase14
+ com.jiangdg.glutils.EGLBase14$1
+ com.jiangdg.glutils.EGLBase14$Config
+ com.jiangdg.glutils.EGLBase14$Context
+ com.jiangdg.glutils.EGLBase14$EglSurface
+com/jiangdg/utils/DiskUtils.java
+ com.jiangdg.utils.DiskUtils
+com/jiangdg/mediaeffect/MediaEffectColorAdjustDrawer.java
+ com.jiangdg.mediaeffect.MediaEffectColorAdjustDrawer
+com/jiangdg/io/IReadable.java
+ com.jiangdg.io.IReadable
+com/jiangdg/view/animation/ResizeAnimation.java
+ com.jiangdg.view.animation.ResizeAnimation
+com/jiangdg/utils/ScreenInfo.java
+ com.jiangdg.utils.ScreenInfo
+com/jiangdg/media/InsufficientFreespaceException.java
+ com.jiangdg.media.InsufficientFreespaceException
+com/jiangdg/media/EncoderListener.java
+ com.jiangdg.media.EncoderListener
+com/jiangdg/utils/ReentrantReadWriteMap.java
+ com.jiangdg.utils.ReentrantReadWriteMap
+com/jiangdg/mediaeffect/MediaEffectNegative.java
+ com.jiangdg.mediaeffect.MediaEffectNegative
+com/jiangdg/io/WritableOutputStreamWrapper.java
+ com.jiangdg.io.WritableOutputStreamWrapper
+com/jiangdg/media/AbstractRecorder.java
+ com.jiangdg.media.AbstractRecorder
+com/jiangdg/widget/AspectScaledTextureView.java
+ com.jiangdg.widget.AspectScaledTextureView
+com/jiangdg/widget/MultilineLabelPreference.java
+ com.jiangdg.widget.MultilineLabelPreference
+com/jiangdg/utils/GPS.java
+ com.jiangdg.utils.GPS
+ com.jiangdg.utils.GPS$Datum
+com/jiangdg/mediaeffect/MediaEffectBackDropper.java
+ com.jiangdg.mediaeffect.MediaEffectBackDropper
+com/jiangdg/utils/UIThreadHelper.java
+ com.jiangdg.utils.UIThreadHelper
+com/jiangdg/widget/DialogPreferenceV7.java
+ com.jiangdg.widget.DialogPreferenceV7
+ com.jiangdg.widget.DialogPreferenceV7$SavedState
+ com.jiangdg.widget.DialogPreferenceV7$SavedState$1
+com/jiangdg/widget/MaskImageView.java
+ com.jiangdg.widget.MaskImageView
+com/jiangdg/utils/BuildCheck.java
+ com.jiangdg.utils.BuildCheck
+com/jiangdg/media/MediaReaper.java
+ com.jiangdg.media.MediaReaper
+ com.jiangdg.media.MediaReaper$AudioReaper
+ com.jiangdg.media.MediaReaper$ReaperListener
+ com.jiangdg.media.MediaReaper$ReaperType
+ com.jiangdg.media.MediaReaper$VideoReaper
+com/jiangdg/media/MediaVideoEncoder.java
+ com.jiangdg.media.MediaVideoEncoder
+com/jiangdg/widget/CheckableImageButton.java
+ com.jiangdg.widget.CheckableImageButton
+com/jiangdg/glutils/IDrawer2dES2.java
+ com.jiangdg.glutils.IDrawer2dES2
+com/jiangdg/media/AbstractVideoEncoder.java
+ com.jiangdg.media.AbstractVideoEncoder
+com/jiangdg/dialog/DialogFragmentEx.java
+ com.jiangdg.dialog.DialogFragmentEx
+com/jiangdg/media/ResolutionValidator.java
+ com.jiangdg.media.ResolutionValidator

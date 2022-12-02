@@ -191,7 +191,7 @@ class CameraUvcStrategy(ctx: Context) : ICameraStrategy(ctx) {
                 mUVCCamera?.setPreviewDisplay(holder)
             }
             mUVCCamera?.autoFocus = true
-            mUVCCamera?.autoWhiteBlance = true
+            mUVCCamera?.autoWhiteBlance = false
             mUVCCamera?.startPreview()
             mUVCCamera?.updateCameraParams()
             mIsPreviewing.set(true)

@@ -415,7 +415,7 @@ abstract class CameraFragment : BaseFragment() {
             .build()
     }
 
-    private fun getCameraRequest(): CameraRequest {
+    fun getCameraRequest(): CameraRequest {
         return CameraRequest.Builder()
             .setFrontCamera(false)
             .setPreviewWidth(640)
