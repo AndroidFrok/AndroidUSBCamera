@@ -64,10 +64,10 @@ dependencies {
     implementation "com.github.bumptech.glide:okhttp3-integration:4.10.0"
     implementation "com.zlc.glide:webpdecoder:1.6.4.9.0"
     implementation 'com.tencent:mmkv:1.2.12'
-
+    implementation 'com.android.support:multidex:1.0.3'
     // For debug online
-    implementation project(':libausbc')
+//    implementation project(':libausbc')
 
     // demo
-//    implementation 'com.github.jiangdongguo.AndroidUSBCamera:libausbc:3.3.3'
+    implementation 'com.github.jiangdongguo.AndroidUSBCamera:libausbc:3.3.3'
 }
