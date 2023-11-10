@@ -34,6 +34,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupWindow
+import android.widget.SeekBar
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.view.children
@@ -41,34 +42,28 @@ import androidx.core.widget.TextViewCompat
 import androidx.lifecycle.lifecycleScope
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.list.listItemsSingleChoice
-import com.jiangdg.ausbc.CameraClient
+import com.jiangdg.ausbc.MultiCameraClient
 import com.jiangdg.ausbc.base.BaseBottomDialog
 import com.jiangdg.ausbc.base.CameraFragment
+import com.jiangdg.ausbc.callback.ICameraStateCallBack
+import com.jiangdg.demo.databinding.FragmentDemoBinding
 import com.jiangdg.ausbc.callback.ICaptureCallBack
 import com.jiangdg.ausbc.callback.IPlayCallBack
-import com.jiangdg.ausbc.camera.Camera1Strategy
-import com.jiangdg.ausbc.camera.Camera2Strategy
-import com.jiangdg.ausbc.camera.CameraUvcStrategy
-import com.jiangdg.ausbc.camera.bean.CameraStatus
+import com.jiangdg.ausbc.camera.CameraUVC
 import com.jiangdg.ausbc.render.effect.EffectBlackWhite
 import com.jiangdg.ausbc.render.effect.EffectSoul
 import com.jiangdg.ausbc.render.effect.EffectZoom
 import com.jiangdg.ausbc.render.effect.bean.CameraEffect
-import com.jiangdg.ausbc.render.env.RotateType
-import com.jiangdg.ausbc.utils.Logger
-import com.jiangdg.ausbc.utils.MediaUtils
-import com.jiangdg.ausbc.utils.ToastUtils
-import com.jiangdg.ausbc.utils.Utils
+import com.jiangdg.ausbc.utils.*
 import com.jiangdg.ausbc.utils.bus.BusKey
 import com.jiangdg.ausbc.utils.bus.EventBus
+import com.jiangdg.utils.imageloader.ILoader
+import com.jiangdg.utils.imageloader.ImageLoaders
 import com.jiangdg.ausbc.widget.*
 import com.jiangdg.demo.EffectListDialog.Companion.KEY_ANIMATION
 import com.jiangdg.demo.EffectListDialog.Companion.KEY_FILTER
 import com.jiangdg.demo.databinding.DialogMoreBinding
-import com.jiangdg.demo.databinding.FragmentDemoBinding
 import com.jiangdg.utils.MMKVUtils
-import com.jiangdg.utils.imageloader.ILoader
-import com.jiangdg.utils.imageloader.ImageLoaders
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.util.*
@@ -78,7 +73,6 @@ import java.util.*
  * @author Created by jiangdg on 2022/1/28
  */
 class DemoFragment : CameraFragment(), View.OnClickListener, CaptureMediaView.OnViewClickListener {
-    private lateinit var builder: CameraClient.Builder
     private var mMultiCameraDialog: MultiCameraDialog? = null
     private lateinit var mMoreBindingView: DialogMoreBinding
     private var mMoreMenu: PopupWindow? = null
@@ -94,18 +88,6 @@ class DemoFragment : CameraFragment(), View.OnClickListener, CaptureMediaView.On
         CaptureMediaView.CaptureMode.MODE_CAPTURE_VIDEO to R.id.recordVideoModeTv,
         CaptureMediaView.CaptureMode.MODE_CAPTURE_AUDIO to R.id.recordAudioModeTv
     )
-
-    override fun getCameraClient(): CameraClient? {
-        builder = CameraClient.newBuilder(requireContext())
-            .setEnableGLES(true)   // use opengl render
-            .setRawImage(true)     // capture raw or filter image
-            .setDefaultEffect(EffectBlackWhite(requireContext())) // default effect
-            .setCameraStrategy(CameraUvcStrategy(requireContext())) // camera type
-            .setCameraRequest(getCameraRequest()) // camera configurations
-            .setDefaultRotateType(RotateType.ANGLE_0) // default camera rotate angle
-            .openDebug(true);// is debug mode
-        return builder.build()
-    }
 
     private val mEffectDataList by lazy {
         arrayListOf(
@@ -141,7 +123,7 @@ class DemoFragment : CameraFragment(), View.OnClickListener, CaptureMediaView.On
 
     private val mMainHandler: Handler by lazy {
         Handler(Looper.getMainLooper()) {
-            when (it.what) {
+            when(it.what) {
                 WHAT_START_TIMER -> {
                     if (mRecSeconds % 2 != 0) {
                         mViewBinding.recStateIv.visibility = View.VISIBLE
@@ -187,32 +169,10 @@ class DemoFragment : CameraFragment(), View.OnClickListener, CaptureMediaView.On
             mViewBinding.frameRateTv.text = "frame rate:  $it fps"
         })
 
-        EventBus.with<CameraStatus>(BusKey.KEY_CAMERA_STATUS).observe(this, {
-            getCurrentCameraStrategy().apply {
-                when (it.code) {
-                    CameraStatus.START -> {
-                        if (this is CameraUvcStrategy) {
-                            mViewBinding.uvcLogoIv.visibility = View.GONE
-                        }
-                        mViewBinding.frameRateTv.visibility = View.VISIBLE
-                    }
-                    else -> {
-                        mViewBinding.frameRateTv.visibility = View.GONE
-                        if (this is CameraUvcStrategy) {
-                            mViewBinding.uvcLogoIv.visibility = View.VISIBLE
-                        }
-                        it.message?.apply {
-                            ToastUtils.show(this)
-                        }
-                    }
-                }
-            }
-        })
-
         EventBus.with<Boolean>(BusKey.KEY_RENDER_READY).observe(this, { ready ->
-            if (!ready) return@observe
+            if (! ready) return@observe
             getDefaultEffect()?.apply {
-                when (getClassifyId()) {
+                when(getClassifyId()) {
                     CameraEffect.CLASSIFY_ID_FILTER -> {
                         // check if need to set anim
                         val animId = MMKVUtils.getInt(KEY_ANIMATION, -99)
@@ -273,6 +233,52 @@ class DemoFragment : CameraFragment(), View.OnClickListener, CaptureMediaView.On
         })
     }
 
+    override fun onCameraState(
+        self: MultiCameraClient.ICamera,
+        code: ICameraStateCallBack.State,
+        msg: String?
+    ) {
+        when (code) {
+            ICameraStateCallBack.State.OPENED -> handleCameraOpened()
+            ICameraStateCallBack.State.CLOSED -> handleCameraClosed()
+            ICameraStateCallBack.State.ERROR -> handleCameraError(msg)
+        }
+    }
+
+    private fun handleCameraError(msg: String?) {
+        mViewBinding.uvcLogoIv.visibility = View.VISIBLE
+        mViewBinding.frameRateTv.visibility = View.GONE
+        ToastUtils.show("camera opened error: $msg")
+    }
+
+    private fun handleCameraClosed() {
+        mViewBinding.uvcLogoIv.visibility = View.VISIBLE
+        mViewBinding.frameRateTv.visibility = View.GONE
+        ToastUtils.show("camera closed success")
+    }
+
+    private fun handleCameraOpened() {
+        mViewBinding.uvcLogoIv.visibility = View.GONE
+        mViewBinding.frameRateTv.visibility = View.VISIBLE
+        mViewBinding.brightnessSb.max = (getCurrentCamera() as? CameraUVC)?.getBrightnessMax() ?: 100
+        mViewBinding.brightnessSb.progress = (getCurrentCamera() as? CameraUVC)?.getBrightness() ?: 0
+        Logger.i(TAG, "max = ${mViewBinding.brightnessSb.max}, progress = ${mViewBinding.brightnessSb.progress}")
+        mViewBinding.brightnessSb.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                (getCurrentCamera() as? CameraUVC)?.setBrightness(progress)
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+
+            }
+        })
+        ToastUtils.show("camera opened success")
+    }
+
     private fun switchLayoutClick() {
         mViewBinding.takePictureModeTv.setOnClickListener {
             if (mCameraMode == CaptureMediaView.CaptureMode.MODE_CAPTURE_PIC) {
@@ -315,7 +321,7 @@ class DemoFragment : CameraFragment(), View.OnClickListener, CaptureMediaView.On
     override fun getGravity(): Int = Gravity.CENTER
 
     override fun onViewClick(mode: CaptureMediaView.CaptureMode?) {
-        if (!isCameraOpened()) {
+        if (! isCameraOpened()) {
             ToastUtils.show("camera not worked!")
             return
         }
@@ -396,6 +402,7 @@ class DemoFragment : CameraFragment(), View.OnClickListener, CaptureMediaView.On
             }
 
             override fun onComplete(path: String?) {
+                ToastUtils.show(path ?: "")
                 isCapturingVideoOrAudio = false
                 mViewBinding.captureBtn.setCaptureVideoState(CaptureMediaView.CaptureVideoState.UNDO)
                 mViewBinding.modeSwitchLayout.visibility = View.VISIBLE
@@ -445,22 +452,17 @@ class DemoFragment : CameraFragment(), View.OnClickListener, CaptureMediaView.On
             override fun onAnimationEnd(animation: Animator?) {
                 when (v) {
                     mViewBinding.lensFacingBtn1 -> {
-                        getCurrentCameraStrategy()?.let { strategy ->
-                            if (strategy is CameraUvcStrategy) {
-                                showUsbDevicesDialog(
-                                    strategy.getUsbDeviceList(),
-                                    strategy.getCurrentDevice()
-                                )
+                        getCurrentCamera()?.let { strategy ->
+                            if (strategy is CameraUVC) {
+                                showUsbDevicesDialog(getDeviceList(), strategy.getUsbDevice())
                                 return
                             }
                         }
-                        switchCamera()
                     }
-                    mViewBinding.effectsBtn -> { // 滤镜
+                    mViewBinding.effectsBtn -> {
                         showEffectDialog()
                     }
-                    mViewBinding.cameraTypeBtn -> { // 没用  换摄像头
-                        showCameraTypeDialog()
+                    mViewBinding.cameraTypeBtn -> {
                     }
                     mViewBinding.settingsBtn -> {
                         showMoreMenu()
@@ -489,10 +491,7 @@ class DemoFragment : CameraFragment(), View.OnClickListener, CaptureMediaView.On
     }
 
     @SuppressLint("CheckResult")
-    private fun showUsbDevicesDialog(
-        usbDeviceList: MutableList<UsbDevice>?,
-        curDevice: UsbDevice?
-    ) {
+    private fun showUsbDevicesDialog(usbDeviceList: MutableList<UsbDevice>?, curDevice: UsbDevice?) {
         if (usbDeviceList.isNullOrEmpty()) {
             ToastUtils.show("Get usb device failed")
             return
@@ -501,18 +500,16 @@ class DemoFragment : CameraFragment(), View.OnClickListener, CaptureMediaView.On
         var selectedIndex: Int = -1
         for (index in (0 until usbDeviceList.size)) {
             val dev = usbDeviceList[index]
-            val devName =
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && !dev.productName.isNullOrEmpty()) {
-                    "${dev.productName}(${curDevice?.deviceId})"
-                } else {
-                    dev.deviceName
-                }
-            val curDevName =
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && !curDevice?.productName.isNullOrEmpty()) {
-                    "${curDevice!!.productName}(${curDevice.deviceId})"
-                } else {
-                    curDevice?.deviceName
-                }
+            val devName = if (Build.VERSION.SDK_INT >=Build.VERSION_CODES.LOLLIPOP && !dev.productName.isNullOrEmpty()) {
+                "${dev.productName}(${curDevice?.deviceId})"
+            } else {
+                dev.deviceName
+            }
+            val curDevName = if (Build.VERSION.SDK_INT >=Build.VERSION_CODES.LOLLIPOP && !curDevice?.productName.isNullOrEmpty()) {
+                "${curDevice!!.productName}(${curDevice.deviceId})"
+            } else {
+                curDevice?.deviceName
+            }
             if (devName == curDevName) {
                 selectedIndex = index
             }
@@ -526,7 +523,7 @@ class DemoFragment : CameraFragment(), View.OnClickListener, CaptureMediaView.On
                 if (selectedIndex == index) {
                     return@listItemsSingleChoice
                 }
-                switchCamera(usbDeviceList[index].deviceId.toString())
+                switchCamera(usbDeviceList[index])
             }
         }
     }
@@ -535,7 +532,7 @@ class DemoFragment : CameraFragment(), View.OnClickListener, CaptureMediaView.On
         EffectListDialog(requireActivity()).apply {
             setData(mEffectDataList, object : EffectListDialog.OnEffectClickListener {
                 override fun onEffectClick(effect: CameraEffect) {
-                    mEffectDataList.find { it.id == effect.id }.also {
+                    mEffectDataList.find {it.id == effect.id}.also {
                         if (it == null) {
                             ToastUtils.show("set effect failed!")
                             return@also
@@ -553,34 +550,6 @@ class DemoFragment : CameraFragment(), View.OnClickListener, CaptureMediaView.On
                 }
             })
             show()
-        }
-    }
-
-    @SuppressLint("CheckResult")
-    private fun showCameraTypeDialog() {
-        val typeList = arrayListOf(
-            "Camera1",
-            "Camera2",
-            "Camera UVC",
-            "Offscreen"
-        )
-        val selectedIndex = when (getCurrentCameraStrategy()) {
-            is Camera1Strategy -> 0
-            is Camera2Strategy -> 1
-            is CameraUvcStrategy -> 2
-            else -> 3
-        }
-        MaterialDialog(requireContext()).show {
-            listItemsSingleChoice(
-                items = typeList,
-                initialSelection = selectedIndex
-            ) { dialog, index, text ->
-                mViewBinding.uvcLogoIv.visibility = if (index == 2) {
-                    View.VISIBLE
-                } else {
-                    View.GONE
-                }
-            }
         }
     }
 
@@ -623,17 +592,11 @@ class DemoFragment : CameraFragment(), View.OnClickListener, CaptureMediaView.On
         mMultiCameraDialog = MultiCameraDialog()
         mMultiCameraDialog?.setOnDismissListener(object : BaseBottomDialog.OnDismissListener {
             override fun onDismiss() {
-                val currentCamera = getCurrentCameraStrategy()
-                if (currentCamera is CameraUvcStrategy) {
-                    currentCamera.register()
-                }
+                registerMultiCamera()
             }
         })
         mMultiCameraDialog?.show(childFragmentManager, "multiRoadCameras")
-        val currentCamera = getCurrentCameraStrategy()
-        if (currentCamera is CameraUvcStrategy) {
-            currentCamera.unRegister()
-        }
+        unRegisterMultiCamera()
     }
 
     private fun showContactDialog() {
@@ -644,7 +607,7 @@ class DemoFragment : CameraFragment(), View.OnClickListener, CaptureMediaView.On
         }
     }
 
-    private fun getVersionName(): String? {
+    private  fun getVersionName(): String? {
         context ?: return null
         val packageManager = requireContext().packageManager
         try {
@@ -695,7 +658,7 @@ class DemoFragment : CameraFragment(), View.OnClickListener, CaptureMediaView.On
     private fun showRecentMedia(isImage: Boolean? = null) {
         lifecycleScope.launch(Dispatchers.IO) {
             context ?: return@launch
-            if (!isFragmentAttached()) {
+            if (! isFragmentAttached()) {
                 return@launch
             }
             try {
@@ -716,7 +679,6 @@ class DemoFragment : CameraFragment(), View.OnClickListener, CaptureMediaView.On
 
                             override fun onLoadedFailed(error: Exception?) {
                                 lifecycleScope.launch(Dispatchers.Main) {
-                                    ToastUtils.show("Capture image error.${error?.localizedMessage}")
                                     mViewBinding.albumPreviewIv.cancelAnimation()
                                 }
                             }
@@ -827,10 +789,7 @@ class DemoFragment : CameraFragment(), View.OnClickListener, CaptureMediaView.On
                 ).apply {
                     isOutsideTouchable = true
                     setBackgroundDrawable(
-                        ContextCompat.getDrawable(
-                            requireContext(),
-                            R.mipmap.camera_icon_one_inch_alpha
-                        )
+                        ContextCompat.getDrawable(requireContext(), R.mipmap.camera_icon_one_inch_alpha)
                     )
                 }
             }
@@ -915,7 +874,7 @@ class DemoFragment : CameraFragment(), View.OnClickListener, CaptureMediaView.On
     }
 
     companion object {
-        private const val TAG = "DemoFragment"
+        private const val TAG  = "DemoFragment"
         private const val WHAT_START_TIMER = 0x00
         private const val WHAT_STOP_TIMER = 0x01
     }

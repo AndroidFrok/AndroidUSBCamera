@@ -19,6 +19,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.media.MediaCodec
 import android.media.MediaFormat
+import android.media.MediaMetadataRetriever
 import android.media.MediaMuxer
 import android.os.Environment
 import android.os.Handler
@@ -51,12 +52,15 @@ class Mp4Muxer(
     context: Context?,
     callBack: ICaptureCallBack,
     private var path: String? = null,
-    private val durationInSec: Long = 0
+    private val durationInSec: Long = 0,
+    private val isVideoOnly: Boolean = false
 ) {
     private var mContext: Context? = null
     private var mMediaMuxer: MediaMuxer? = null
     private var mFileSubIndex: Int = 0
+    @Volatile
     private var mVideoTrackerIndex = -1
+    @Volatile
     private var mAudioTrackerIndex = -1
     private var mVideoFormat: MediaFormat? = null
     private var mAudioFormat: MediaFormat? = null
@@ -104,10 +108,13 @@ class Mp4Muxer(
         try {
             mMediaMuxer?.apply {
                 val tracker = addTrack(mediaFormat)
+                if (Utils.debugCamera) {
+                    Logger.i(TAG, "addTracker index = $tracker isVideo = $isVideo")
+                }
                 if (isVideo) {
                     mVideoFormat = mediaFormat
                     mVideoTrackerIndex = tracker
-                    if (mAudioTrackerIndex != -1) {
+                    if (mAudioTrackerIndex != -1 || isVideoOnly) {
                         start()
                         mMainHandler.post {
                             mCaptureCallBack?.onBegin()
@@ -130,9 +137,6 @@ class Mp4Muxer(
                             Logger.i(TAG, "start media muxer")
                         }
                     }
-                }
-                if (Utils.debugCamera) {
-                    Logger.i(TAG, "addTracker index = $tracker isVideo = $isVideo")
                 }
             }
         } catch (e: Exception) {
@@ -222,6 +226,7 @@ class Mp4Muxer(
             mMediaMuxer?.stop()
             mMediaMuxer?.release()
             insertDCIM(mContext, path, true)
+            Logger.i(TAG, "stop media muxer")
         } catch (e: Exception) {
             mMainHandler.post {
                 mCaptureCallBack?.onError(e.localizedMessage)
@@ -259,7 +264,8 @@ class Mp4Muxer(
         values.put(MediaStore.Video.Media.DATA, path)
         values.put(MediaStore.Video.Media.DISPLAY_NAME, file.name)
         values.put(MediaStore.Video.Media.MIME_TYPE, "video/mp4")
-        values.put(MediaStore.Video.Media.SIZE, file.totalSpace)
+        values.put(MediaStore.Video.Media.SIZE, file.length())
+        values.put(MediaStore.Video.Media.DURATION, getLocalVideoDuration(file.path))
         if (MediaUtils.isAboveQ()) {
             val relativePath =  "${Environment.DIRECTORY_DCIM}${File.separator}Camera"
             val dateExpires = (System.currentTimeMillis() + DateUtils.DAY_IN_MILLIS) / 1000
@@ -270,7 +276,18 @@ class Mp4Muxer(
     }
 
 
-    private fun isMuxerStarter() = mVideoTrackerIndex != -1 && mAudioTrackerIndex != -1
+    fun isMuxerStarter() = mVideoTrackerIndex != -1 && (mAudioTrackerIndex != -1 || isVideoOnly)
+
+    private fun getLocalVideoDuration(filePath: String?): Long {
+        return try {
+            val mmr = MediaMetadataRetriever()
+            mmr.setDataSource(filePath)
+            mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION)?.toLong() ?:0L
+        } catch (e: Exception) {
+            e.printStackTrace()
+            0L
+        }
+    }
 
     companion object {
         private const val TAG = "Mp4Muxer"
