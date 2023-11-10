@@ -320,6 +320,9 @@ class DemoFragment : CameraFragment(), View.OnClickListener, CaptureMediaView.On
 
     override fun getGravity(): Int = Gravity.CENTER
 
+    /**
+     * 快门点击事件
+     */
     override fun onViewClick(mode: CaptureMediaView.CaptureMode?) {
         if (! isCameraOpened()) {
             ToastUtils.show("camera not worked!")
