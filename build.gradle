@@ -29,11 +29,11 @@ ext {
     versionCompiler = 29
     versionTarget = 27
     minSdkVersion = 19
-    versionCode = 121
-    versionNameString = '3.2.10'
+    versionCode = 126
+    versionNameString = '3.3.3'
     javaSourceCompatibility = JavaVersion.VERSION_1_8
     javaTargetCompatibility = JavaVersion.VERSION_1_8
-    ndkVersion = '21.0.6113669'
+//    ndkVersion = '21.0.6113669'
     supportLibVersion = '27.1.1'
     versionBuildTool = '27.0.3'
     kotlinCoreVersion = '1.3.2'
