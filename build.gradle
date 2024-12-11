@@ -1,5 +1,6 @@
 // Top-level build file where you can add configuration options libuvccommon to all sub-projects/modules.
 buildscript {
+    apply from: 'maven.gradle'
     repositories {
         google()
         jcenter()
@@ -14,6 +15,7 @@ buildscript {
 
 allprojects {
     repositories {
+        addCommonMaven(repositories)
         google()
         jcenter()
         maven { url "https://jitpack.io" }
