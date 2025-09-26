@@ -14,8 +14,8 @@ android {
 
         multiDexEnabled true
 
-        ndk{
-            abiFilters 'armeabi-v7a','arm64-v8a'
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
         }
     }
     signingConfigs {
@@ -94,6 +94,6 @@ dependencies {
 
     // For debug online
     implementation project(':libausbc')
-    // demo
+    // demo https://mvnrepository.com/artifact/com.github.jiangdongguo.AndroidUSBCamera/libausbc
 //    api 'com.github.jiangdongguo.AndroidUSBCamera:libausbc:3.3.3'
 }
